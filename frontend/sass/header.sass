@@ -1,0 +1,121 @@
+.header
+  &_wrapper
+    padding: 13px 0
+  &_top-menu_wrapper
+    background: $dark-blue
+    // height: 62px
+  
+  &_logo
+    height: 34px
+  
+  #menu-top
+    .nav-link
+      color: $green
+      font-size: 12px
+      font-weight: 700
+      &:hover
+        color: white
+
+    .header_search_icon
+      .nav-link
+        &::before
+          content: ''
+          display: inline-block
+          width: 13px
+          height: 13px
+          background: url('/img/search.svg') no-repeat
+          background-position: 0 0
+          background-size: 25px
+          margin-bottom: -3px
+          margin-right: 3px
+          position: relative
+        &:hover::before
+          background-position: 100% 0
+
+  .header_contacts
+    max-height: 60px
+
+  &_phone
+    padding-top: 8px
+    padding-right: 14px
+    color: $white
+    border-right: 1px solid #2d547a
+    height: 100%
+
+    &_link
+      color: $white
+      font-size: 12px
+      font-weight: 500
+
+      &:hover
+        color: inherit
+        text-decoration: underline
+
+    &_btn-blue
+      font-size: 9px
+      padding: 2px 10px
+      border-radius: 3px
+      font-weight: 700
+
+  &_messengers
+    position: relative
+    z-index: 10
+    background: $green
+    //right: 15px
+    width: 115px
+    left: 55px
+    padding: 5px 11px 6px
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    &_icon
+
+  &_cart
+    color: $white
+    padding-top: 10px
+
+    &_link
+      color: $white
+      &:hover
+        text-decoration: underline
+        color: $white
+
+// Модальное окно
+.form-result
+    display: none
+
+.modal
+  .form-result
+    text-align: center
+    padding: 0 50px 50px
+  .desc
+    padding: 5px 20px
+
+.modal
+  .modal-dialog
+    max-width: 400px
+
+  .modal-content
+    padding: 0px
+
+    .modal-header
+      border-bottom: none
+      padding: 15px 15px 15px 70px
+      margin-bottom: 10px
+
+    .modal-body
+      padding: 0 30px
+
+    .modal-footer
+      border-top: none
+      margin-top: 30px
+      margin-bottom: 30px
+      padding: 0 80px
+
+    .desc
+      padding: 0 30px
+
+  #btn-submit
+    margin: auto
+
+@media (min-width: 576px)
+  .modal-md
+    max-width: 400px;
