@@ -82,7 +82,64 @@
       margin-bottom: 50px
 
     &_product_wrapper
-      border: 1px solid grey
+      border: 1px solid $light-grey
+      border-radius: 5px
+      overflow: hidden
+      &:before
+        content: ''
+        display: block
+        width: 22px
+        height: 21px
+        background: url('/img/star.png') no-repeat
+        background-size: contain
+        position: absolute
+        top: 10px
+        left: 25px
 
-    &_product_desc_wrapper
-      padding: 20px
+
+    .attachment-woocommerce_thumbnail
+      border-bottom: 1px solid $light-grey
+
+    .add-to-cart
+      height: 100%
+      width: 100%
+      background: $blue
+      color: $white
+      text-align: center
+      &:hover
+        text-decoration: none
+      span
+        font-size: 25px
+        font-family: 'Open Sans', Helvetica, Arial, sans-servif
+        font-weight: 300
+
+    .woocommerce-loop-product__link
+      line-height: inherit
+      height: 100%
+      display: inline-block
+
+    .woocommerce-loop-product__title
+      font-size: 12px
+      text-transform: uppercase
+      color: $dark-blue
+      font-weight: bold
+      display: block
+      min-height: 30px
+
+    &_desc_wrapper
+      padding: 20px 0px 15px 20px
+
+      .weight
+        font-size: 12px
+        margin-bottom: 0
+
+      .price
+        font-size: 18px
+        font-weight: bold
+        
+        del
+          color: $dark-blue
+
+        ins
+          color: $blue
+          display: inline-block

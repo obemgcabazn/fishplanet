@@ -51,12 +51,14 @@ function return_numbers_from_string( $string ){
     echo $result;
 }
 
-function slick_gallery()
-{
+function top_sales(){
+
     global $woocommerce_loop;
     $params = array(
-        'posts_per_page' => 6,
-        'post_type' => 'product'
+        'posts_per_page' => 4,
+        'post_type' => 'product',
+        'product_cat' => 'leaders',
+        'order' => 'asc'
     );
 
     $products = new WP_Query($params);
@@ -64,11 +66,11 @@ function slick_gallery()
     ob_start();
     if ($products->have_posts()) {
 
-        echo '<div id="slick-products-gallery">';
+        echo '<div class="row">';
 
         while ($products->have_posts()) {
             $products->the_post();
-            wc_get_template_part('content', 'slider');
+            wc_get_template_part('content', 'top_sales');
         }
 
         echo '</div>';
@@ -79,17 +81,6 @@ function slick_gallery()
     woocommerce_reset_loop();
     wp_reset_postdata();
 
-    // add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 20 );
-    // add_action( 'woocommerce_template_loop_product_title', 'woocommerce_template_loop_product_link_open', 5 );
-    // remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 20 );
-
-    add_action('wp_footer', 'slick_init');
-    function slick_init()
-    {
-        wp_enqueue_script('slick', "//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js", '', '', 'true');
-        wp_enqueue_script('slick-init', get_template_directory_uri() . "/js/slick-init.js", '', '', 'true');
-    }
-
     return ob_get_clean();
 }
-add_shortcode('slick', 'slick_gallery');
+add_shortcode('top_sales', 'top_sales');
