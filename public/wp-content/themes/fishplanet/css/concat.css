@@ -427,5 +427,55 @@ footer {
         color: #5799cd;
         display: inline-block; }
 
+.fancybox-close-small {
+  color: white !important; }
+
+.search_wrapper .searchform {
+  margin-bottom: 50px; }
+  .search_wrapper .searchform_wrapper {
+    background: white;
+    padding: 10px 10px 10px 20px; }
+    .search_wrapper .searchform_wrapper #s {
+      margin-left: 12px;
+      width: 93%; }
+
+.search_wrapper ul.search_menu {
+  display: block; }
+  .search_wrapper ul.search_menu li {
+    display: block; }
+    .search_wrapper ul.search_menu li a {
+      padding-left: 0;
+      color: white;
+      font-family: 'Open Sans', Helvetica, Arial, sans-servif;
+      font-size: 12px; }
+      .search_wrapper ul.search_menu li a:hover {
+        text-decoration: underline; }
+
+.search_wrapper .search_phone_link, .search_wrapper .search_email_link {
+  color: white;
+  font-family: 'Open Sans', Helvetica, Arial, sans-servif;
+  font-size: 12px;
+  padding: .5rem 1rem;
+  padding-right: 0;
+  display: inline-block; }
+
+.search_wrapper h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 60px; }
+
+.search_wrapper h4 {
+  color: white;
+  font-weight: bold;
+  font-size: 18px; }
+
+.fancybox-bg {
+  background: #5799cd !important;
+  opacity: 0.97 !important; }
+
+.fancybox-content {
+  background: none !important; }
+
 img {
   max-width: 100%; }

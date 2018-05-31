@@ -27,7 +27,9 @@ function my_scripts_method()
 
 register_nav_menus(array(
     'top_menu' => __('Верхнее меню'),
-    'aside_menu' => __('Мобильное меню')
+    'aside_menu' => __('Мобильное меню'),
+    'search_top' => __('Топ запросов в поиске'),
+    'search_category' => __('Наименования')
 )); 
 
 
