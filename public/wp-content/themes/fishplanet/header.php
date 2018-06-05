@@ -117,3 +117,4 @@
     <div style="display: none;" id="hidden-content-b">
       <p><?php get_search_form( true ); ?></p>
     </div>
+

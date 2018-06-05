@@ -32,7 +32,6 @@ register_nav_menus(array(
     'search_category' => __('Наименования')
 )); 
 
-
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }

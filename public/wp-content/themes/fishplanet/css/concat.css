@@ -477,5 +477,46 @@ footer {
 .fancybox-content {
   background: none !important; }
 
+.woocommerce-cart-form .product-thumbnail {
+  padding-right: 20px; }
+
+.woocommerce-cart-form .product-name {
+  padding-right: 20px; }
+  .woocommerce-cart-form .product-name a {
+    font-size: 18px;
+    font-weight: bold; }
+
+.woocommerce-cart-form .product-quantity {
+  padding-right: 20px; }
+  .woocommerce-cart-form .product-quantity .qty {
+    width: 70px; }
+
+.woocommerce-cart-form .product-subtotal {
+  padding-right: 20px; }
+
+.woocommerce-cart-form .product-remove a {
+  text-decoration: none; }
+  .woocommerce-cart-form .product-remove a:hover {
+    text-decoration: uncart-total; }
+
+.woocommerce table.cart {
+  margin: 0;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 0; }
+
+.wc-proceed-to-checkout .checkout-button {
+  display: inline-block;
+  background: #5799cd;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 60px;
+  border-radius: 5px; }
+
+.woocommerce .cart_totals table.shop_table {
+  border-radius: 0 0 5px 5px;
+  border-top: 0; }
+
 img {
   max-width: 100%; }
