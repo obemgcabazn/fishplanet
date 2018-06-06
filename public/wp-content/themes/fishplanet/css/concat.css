@@ -499,10 +499,39 @@ footer {
   .woocommerce-cart-form .product-remove a:hover {
     text-decoration: uncart-total; }
 
+.cart_wrapper {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px; }
+
 .woocommerce table.cart {
   margin: 0;
   border-radius: 5px 5px 0 0;
   border-bottom: 0; }
+
+.woocommerce table.cart td.actions {
+  text-align: left;
+  padding-left: 0; }
+
+.woocommerce table.shop_table {
+  border: none; }
+
+.woocommerce table.shop_table tr {
+  border-left: none; }
+  .woocommerce table.shop_table tr + tr td {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .woocommerce table.shop_table tr .product-thumbnail {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0; }
+  .woocommerce table.shop_table tr .product-name a {
+    color: #183152; }
+
+.woocommerce a.remove {
+  color: #d6d6d6 !important; }
+  .woocommerce a.remove:hover {
+    background-color: #d6d6d6 !important; }
 
 .wc-proceed-to-checkout .checkout-button {
   display: inline-block;

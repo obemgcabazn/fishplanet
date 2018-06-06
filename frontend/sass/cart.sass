@@ -20,10 +20,42 @@
       &:hover
         text-decoration: uncart-total
 
+.cart_wrapper
+  padding: 20px
+  border: 1px solid rgba(0,0,0,.1)
+  border-radius: 5px
+  margin-bottom: 20px
+
 .woocommerce table.cart
   margin: 0
   border-radius: 5px 5px 0 0
   border-bottom: 0
+
+.woocommerce table.cart td.actions
+  text-align: left
+  padding-left: 0
+
+.woocommerce table.shop_table
+  border: none
+
+.woocommerce table.shop_table tr 
+  border-left: none
+
+  & + tr td
+    border-top: 1px solid rgba(0,0,0,.1)
+  
+  .product-thumbnail
+    padding-top: 0
+    padding-bottom: 0
+    padding-left: 0
+
+  .product-name a
+    color: $dark-blue
+
+.woocommerce a.remove
+  color: $light-grey!important
+  &:hover
+    background-color: $light-grey!important
 
 
 // cart-total

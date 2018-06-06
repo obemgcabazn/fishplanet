@@ -82,21 +82,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 		<?php endif; ?>
 
-		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
-
-		<tr class="order-total">
-			<th><?php _e( 'Total', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
-		</tr>
-
-		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
-
 	</table>
 </div>
 
-	<div class="wc-proceed-to-checkout">
-		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+	<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="order-total text-right">
+				<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">Итого: <?php wc_cart_totals_order_total_html(); ?></td>
+			</div>
+		</div>
 	</div>
+
+	<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
+
+</div> <!-- cart_wrapper	 -->
+
+
+
+<div class="row">
+	<div class="col-12 d-flex justify-content-end">
+		<div class="wc-proceed-to-checkout">
+			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+		</div>
+	</div>
+</div>
+
 
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
