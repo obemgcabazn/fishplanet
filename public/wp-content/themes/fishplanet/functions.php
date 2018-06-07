@@ -85,3 +85,46 @@ function top_sales(){
     return ob_get_clean();
 }
 add_shortcode('top_sales', 'top_sales');
+
+
+// Формы для заказа
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+function custom_override_checkout_fields( $f ) {
+    unset($f['billing']['billing_company']);
+    unset($f['billing']['billing_last_name']);
+    unset($f['billing']['billing_country']);
+    unset($f['billing']['billing_city']);
+    // unset($f['billing']['billing_address_1']);
+    unset($f['billing']['billing_address_2']);
+    unset($f['billing']['billing_state']);
+    unset($f['billing']['billing_postcode']);
+
+    $f['billing']['billing_first_name']['label'] = 'Имя и фамилия';
+    $f['billing']['billing_first_name']['placeholder'] = 'Введите ФИО';
+    $f['billing']['billing_first_name']['class'][0] = '';
+    $f['billing']['billing_first_name']['class'][1] = 'row col-lg-6';
+    $f['billing']['billing_first_name']['label_class'][0] = 'col-12';
+    $f['billing']['billing_first_name']['input_class'][0] = 'col-12';
+
+    $f['billing']['billing_address_1']['class'][2] = 'row col-lg-6';
+    $f['billing']['billing_address_1']['label_class'][0] = 'col-12';
+    $f['billing']['billing_address_1']['input_class'][0] = 'col-12';
+    $f['billing']['billing_address_1']['label'] = 'Адрес доставки';
+
+    $f['billing']['billing_phone']['class'][2] = 'row col-lg-6';
+    $f['billing']['billing_phone']['label_class'][0] = 'col-12';
+    $f['billing']['billing_phone']['input_class'][0] = 'col-12';
+
+    $f['billing']['billing_email']['class'][2] = 'row col-lg-6';
+    $f['billing']['billing_email']['label_class'][0] = 'col-12';
+    $f['billing']['billing_email']['input_class'][0] = 'col-12';
+
+    $f['order']['order_comments']['label'] = 'Комментарий к доставке';
+    $f['order']['order_comments']['class'][2] = 'row col-lg-12';
+    $f['order']['order_comments']['label_class'][0] = 'col-12';
+    $f['order']['order_comments']['input_class'][0] = 'col-12';
+    $f['order']['order_comments']['reqired'] = false;
+    $f['order']['order_comments']['clear'] = true;
+    return $f;
+    // print_r($f);
+}

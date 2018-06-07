@@ -16,7 +16,7 @@
 
 <div class="container">
   <div class="row justify-content-md-center">
-    <?php if ( is_cart() ){ ?>
+    <?php if ( is_cart() || is_checkout() ){ ?>
       <div class="col-12 col-lg-8">
     <?php } else { ?>
       <div class="col-12">

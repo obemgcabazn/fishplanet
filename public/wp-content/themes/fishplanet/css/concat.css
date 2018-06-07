@@ -547,5 +547,18 @@ footer {
   border-radius: 0 0 5px 5px;
   border-top: 0; }
 
+h1 {
+  margin-bottom: 20px; }
+
+.checkout-wrapper {
+  background: #f0f0f0;
+  padding: 40px;
+  border-radius: 7px; }
+
+.woocommerce form .form-row {
+  padding: inherit;
+  margin-left: -5px;
+  margin-right: -5px; }
+
 img {
   max-width: 100%; }
