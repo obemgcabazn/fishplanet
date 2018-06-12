@@ -1,8 +1,65 @@
 <?php
-add_theme_support( 'woocommerce' );
-define('WOOCOMMERCE_USE_CSS', false);
+/**
+ * fishplanet functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package fishplanet
+ */
 
-add_theme_support( 'html5', array( 'search-form' ) );
+if ( ! function_exists( 'fishplanet_setup' ) ){
+  function fishplanet_setup() {
+
+    define('WOOCOMMERCE_USE_CSS', false);
+
+    add_theme_support( 'woocommerce' );
+    add_theme_support( 'html5', array( 'search-form' ) );
+  }
+}
+add_action( 'after_setup_theme', 'fishplanet_setup' );
+
+/**
+ * Enqueue scripts and styles.
+ */
+if ( !is_admin() ) {
+  add_action( 'wp_print_styles', 'fishplanet_style_method' );
+}
+function fishplanet_style_method () {
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . "/css/bootstrap-fishplanet.css", '', '', '' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . "/css/concat.css", '', '', '' );
+    wp_enqueue_style( 'fancybox', get_template_directory_uri() . "/css/jquery.fancybox.min.css", '', '', '' );
+}
+
+add_action('wp_enqueue_scripts', 'fishplanet_scripts_method');
+function fishplanet_scripts_method()
+{
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', "https://yastatic.net/jquery/2.0.3/jquery.min.js", '', '', 'true');
+    wp_enqueue_script('popper', "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js", '', '', 'true');
+    wp_enqueue_script('bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js", '', '', 'true');
+    wp_enqueue_script('pushy', get_template_directory_uri() . "/js/pushy.min.js", '', '', 'true');
+    wp_enqueue_script('fancybox', get_template_directory_uri() . "/js/jquery.fancybox.min.js", '', '', 'true');
+    wp_enqueue_script('script', get_template_directory_uri() . "/js/script.js", '', '', 'true');
+} 
+
+
+function fishplanet_register_menu(){
+  register_nav_menus(array(
+      'top_menu' => __('Верхнее меню'),
+      'aside_menu' => __('Мобильное меню'),
+      'search_top' => __('Топ запросов в поиске'),
+      'search_category' => __('Наименования'),
+      'footer_about' => __('О нас футер'),
+      'footer_services' => __('Сервис футер')
+  ));
+}
+if (function_exists('register_nav_menus')) {
+  add_action( 'init', 'fishplanet_register_menu' );
+}
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
 
 // Отключаем сжатие изображений
 add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
@@ -55,13 +112,13 @@ remove_filter('the_content', 'wptexturize'); /* убираем авотдоба�
 remove_action( 'wp_head', 'wp_resource_hints', 2); /* удаляем dns-prefetch */
 
 // Удаляем автоподстановку размера картинок
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
-add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+// add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+// add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
 
-function remove_thumbnail_dimensions( $html ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
-}
+// function remove_thumbnail_dimensions( $html ) {
+//     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+//     return $html;
+// }
 
 // Удаляем RSS ленту
 function fb_disable_feed() {

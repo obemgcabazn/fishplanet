@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,700|Open+Sans&subset=cyrillic");
 * {
-  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-servif; }
+  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif; }
 
 p {
-  font-family: 'Open Sans', Helvetica, Arial, sans-servif; }
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
 
 .lh-0 {
   line-height: 0; }
@@ -17,6 +17,9 @@ p {
   color: grey; }
   .grey a {
     text-decoration: underline; }
+
+.light-grey {
+  color: #d6d6d6; }
 
 .white {
   color: white; }
@@ -264,6 +267,9 @@ a:focus {
       text-decoration: underline;
       color: white; }
 
+#breadcrumbs a {
+  color: grey; }
+
 .form-result {
   display: none; }
 
@@ -303,7 +309,26 @@ a:focus {
 footer {
   margin-top: 70px;
   padding-top: 65px;
+  padding-bottom: 80px;
   background: #183152; }
+  footer .footer-grey {
+    color: #c1c1c1; }
+  footer .nav {
+    display: block; }
+    footer .nav li {
+      display: block; }
+      footer .nav li a {
+        padding-left: 0; }
+        footer .nav li a:hover {
+          color: white; }
+  footer .social_media_icons {
+    list-style: none;
+    padding: 0; }
+    footer .social_media_icons li {
+      display: inline-block;
+      margin-right: 10px; }
+      footer .social_media_icons li .social_icon img {
+        width: 30px; }
 
 .front-page .first-screen {
   background: url("/img/peskar.jpg") no-repeat;
@@ -350,7 +375,8 @@ footer {
   padding-top: 280px;
   padding-bottom: 180px;
   background: #5799cd url("/img/front-page-bg-ocean.jpg") no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-position: 100% 0; }
   .front-page #about .fish-letter {
     font-weight: 700;
     font-size: 64px;
@@ -519,7 +545,10 @@ footer {
 
 .woocommerce table.shop_table tr {
   border-left: none; }
-  .woocommerce table.shop_table tr + tr td {
+  .woocommerce table.shop_table tr .actions {
+    border: none;
+    padding-top: 20px; }
+  .woocommerce table.shop_table tr + tr.woocommerce-cart-form__cart-item td {
     border-top: 1px solid rgba(0, 0, 0, 0.1); }
   .woocommerce table.shop_table tr .product-thumbnail {
     padding-top: 0;
@@ -533,19 +562,30 @@ footer {
   .woocommerce a.remove:hover {
     background-color: #d6d6d6 !important; }
 
-.wc-proceed-to-checkout .checkout-button {
+.shipping-name {
+  color: #183152;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-servif; }
+
+.woocommerce a.button.alt {
   display: inline-block;
   background: #5799cd;
   color: white;
   font-size: 17px;
   font-weight: bold;
   text-decoration: none;
-  padding: 12px 60px;
+  padding: 15px 60px;
   border-radius: 5px; }
+  .woocommerce a.button.alt:hover {
+    background: #7eb1d9; }
 
 .woocommerce .cart_totals table.shop_table {
   border-radius: 0 0 5px 5px;
   border-top: 0; }
+
+.order-total {
+  font-size: 15px; }
 
 h1 {
   margin-bottom: 20px; }
@@ -559,6 +599,93 @@ h1 {
   padding: inherit;
   margin-left: -5px;
   margin-right: -5px; }
+
+.woocommerce-billing-fields__field-wrapper label {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 3px; }
+
+.woocommerce-billing-fields__field-wrapper input {
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+
+.notes {
+  font-size: 14px; }
+  .notes label {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+  .notes #order_comments {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px; }
+    .notes #order_comments:focus {
+      outline-color: #5799cd; }
+
+.woocommerce-checkout #payment {
+  background: #f0f0f0;
+  padding: 40px; }
+
+.woocommerce #payment #place_order {
+  display: inline-block;
+  background: #5799cd;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 60px;
+  border-radius: 5px; }
+  .woocommerce #payment #place_order:hover {
+    background: #7eb1d9; }
+
+.wc_payment_methods .wc_payment_method {
+  display: inline-block; }
+  .wc_payment_methods .wc_payment_method label {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px; }
+
+.payment_method_input_wrapper {
+  background: white;
+  padding: 20px;
+  border: 3px solid #5799cd;
+  border-radius: 10px;
+  margin-bottom: 30px; }
+
+#payment_method_cod, #payment_method_ym_api_bank_card {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: auto;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-size: cover !important; }
+  #payment_method_cod:focus, #payment_method_ym_api_bank_card:focus {
+    outline: none; }
+
+#payment_method_cod {
+  background: url(/img/economy.png) no-repeat; }
+  #payment_method_cod:checked {
+    background-position: -171px 0px; }
+
+.wc_payment_method label {
+  margin-bottom: 0; }
+
+#payment_method_ym_api_bank_card {
+  background: url(/img/payment_card.svg) no-repeat; }
+  #payment_method_ym_api_bank_card:checked {
+    background-position: -200px 1px; }
+
+.payment_method_ym_api_bank_card img {
+  display: none; }
+
+.place-order {
+  text-align: center; }
 
 img {
   max-width: 100%; }

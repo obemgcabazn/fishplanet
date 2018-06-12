@@ -24,28 +24,28 @@ get_header(); ?>
   <div class="row no-gutters">
     <div class="col-xl-3">
       <div class="front-page_category fresh">
-        <a href="/fresh/" class="front-page_category_link d-flex align-items-end">
+        <a href="/category/fresh/" class="front-page_category_link d-flex align-items-end">
           <p class="front-page_category_link_desc text-uppercase">Свежие<br>морепродукты</p>
         </a>
       </div>
     </div>
     <div class="col-xl-3">
       <div class="front-page_category freezing">
-        <a href="/freezing/" class="front-page_category_link d-flex align-items-end">
+        <a href="/category/freezing/" class="front-page_category_link d-flex align-items-end">
           <p class="front-page_category_link_desc text-uppercase">Заморозка</p>
         </a>
       </div>
     </div>
     <div class="col-xl-3">
       <div class="front-page_category smoked">
-        <a href="/smoked/" class="front-page_category_link d-flex align-items-end">
+        <a href="/category/smoked/" class="front-page_category_link d-flex align-items-end">
           <p class="front-page_category_link_desc text-uppercase">Копчености</p>
         </a>
       </div>
     </div>
     <div class="col-xl-3">
       <div class="front-page_category caviar">
-        <a href="/caviar/" class="front-page_category_link d-flex align-items-end">
+        <a href="/category/caviar/" class="front-page_category_link d-flex align-items-end">
           <p class="front-page_category_link_desc text-uppercase">Икра</p>
         </a>
       </div>

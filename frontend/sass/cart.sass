@@ -41,7 +41,11 @@
 .woocommerce table.shop_table tr 
   border-left: none
 
-  & + tr td
+  .actions
+    border: none
+    padding-top: 20px
+
+  & + tr.woocommerce-cart-form__cart-item td
     border-top: 1px solid rgba(0,0,0,.1)
   
   .product-thumbnail
@@ -57,21 +61,33 @@
   &:hover
     background-color: $light-grey!important
 
+.shipping
+  &-name
+    color: $dark-blue
+    font-size: 18px
+    font-weight: bold
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-servif
+
+
 
 // cart-total
-.wc-proceed-to-checkout
-  .checkout-button
-    display: inline-block
-    background: $blue
-    color: $white
-    font-size: 17px
-    font-weight: bold
-    text-decoration: none
-    padding: 12px 60px
-    border-radius: 5px
+.woocommerce a.button.alt
+  display: inline-block
+  background: $blue
+  color: $white
+  font-size: 17px
+  font-weight: bold
+  text-decoration: none
+  padding: 15px 60px
+  border-radius: 5px
+  &:hover
+    background: lighten($blue, 10)
 
 .woocommerce 
   .cart_totals 
     table.shop_table
       border-radius: 0 0 5px 5px
       border-top: 0
+
+.order-total
+  font-size: 15px

@@ -46,22 +46,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<td class="product-thumbnail">
 						<?php
 
-						// меняем размер миниатюр для корзины
-						// add_theme_support( 'woocommerce', array(
-						// 	'thumbnail_image_width' => 60,
-						// 	'gallery_thumbnail_image_width' => 70,
-						// 	'single_image_width' => 80
-						// ));
-
-						// add_theme_support( 'woocommerce', array(
-						//     'thumbnail_image_width' => 60,
-						//     'single_image_width'    => 800,
-						//     'thumbnail_image_width' => 170,
-						// ) );
-						// echo get_the_post_thumbnail_url( $product_id, 'shop_thumbnail' );
-						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image( 'shop_thumbnail' ), $cart_item, $cart_item_key );
-						// $cart_item_key = 'fccb60fb512d13df5083790d64c4d5dd'
-						//print_r($cart_item_key);
+						add_image_size( 'cart_image_size', 60, 60, false );
+						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image( 'cart_image_size' ), $cart_item, $cart_item_key );
 
 						if ( ! $product_permalink ) {
 							echo wp_kses_post( $thumbnail );
