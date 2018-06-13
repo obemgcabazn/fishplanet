@@ -14,6 +14,7 @@ if ( ! function_exists( 'fishplanet_setup' ) ){
 
     add_theme_support( 'woocommerce' );
     add_theme_support( 'html5', array( 'search-form' ) );
+    add_theme_support('widgets');
   }
 }
 add_action( 'after_setup_theme', 'fishplanet_setup' );
@@ -42,7 +43,6 @@ function fishplanet_scripts_method()
     wp_enqueue_script('script', get_template_directory_uri() . "/js/script.js", '', '', 'true');
 } 
 
-
 function fishplanet_register_menu(){
   register_nav_menus(array(
       'top_menu' => __('Верхнее меню'),
@@ -50,12 +50,25 @@ function fishplanet_register_menu(){
       'search_top' => __('Топ запросов в поиске'),
       'search_category' => __('Наименования'),
       'footer_about' => __('О нас футер'),
-      'footer_services' => __('Сервис футер')
+      'footer_services' => __('Сервис футер'),
+      'sidebar' => __('Боковое меню')
   ));
 }
 if (function_exists('register_nav_menus')) {
   add_action( 'init', 'fishplanet_register_menu' );
 }
+
+function fishplanet_register_sidebar(){
+  if (function_exists('register_sidebar')) register_sidebar(array(
+      'id' => 'shop',
+      'name' => 'Боковое меню',
+      'before_title' => '',
+      'after_title' => '',
+      'before_widget' => '<div id="%1$s" class="search widget %2$s">',
+      'after_widget' => '</div>'
+  ));
+}
+add_action( 'widgets_init', 'fishplanet_register_sidebar' );
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
@@ -150,3 +163,4 @@ function iservice_login_logo() {
     </style>';
 }
 add_action('login_head', 'iservice_login_logo');
+

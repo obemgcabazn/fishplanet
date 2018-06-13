@@ -687,5 +687,51 @@ h1 {
 .place-order {
   text-align: center; }
 
+#sidebar {
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6; }
+
+.sidebar-header {
+  background: #5799cd;
+  color: white;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+#menu-sidebar {
+  padding-bottom: 20px; }
+  #menu-sidebar li a {
+    font-weight: bold;
+    padding-left: 20px;
+    color: #5799cd;
+    font-size: 14px; }
+    #menu-sidebar li a:hover {
+      color: #183152; }
+
+.ordering {
+  padding-bottom: 10px; }
+  .ordering .orderby {
+    border-radius: 0;
+    border-color: #d6d6d6;
+    background: none;
+    padding: 10px; }
+
+.product {
+  border: 1px solid #d6d6d6; }
+  .product .onsale {
+    position: absolute;
+    top: 10px;
+    left: 30px; }
+  .product .price {
+    display: block; }
+
+.attachment-woocommerce_thumbnail {
+  border-bottom: 1px solid #d6d6d6; }
+
+.woocommerce-loop-product__title {
+  font-size: 15px;
+  color: #183152;
+  margin: 20px 20px 10px; }
+
 img {
   max-width: 100%; }
