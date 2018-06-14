@@ -45,9 +45,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<td class="product-thumbnail">
 						<?php
-
-						add_image_size( 'cart_image_size', 60, 60, false );
-						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image( 'cart_image_size' ), $cart_item, $cart_item_key );
+						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 						if ( ! $product_permalink ) {
 							echo wp_kses_post( $thumbnail );

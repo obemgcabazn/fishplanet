@@ -403,3 +403,10 @@ if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
 function woocommerce_template_loop_product_title() {
     echo '<h5 class="woocommerce-loop-product__title">' . get_the_title() . '</h5>';
 }
+
+// Задаем размеры миниатюр для корзины
+add_image_size( 'cart_image_size', 60, 60, false );
+add_filter( 'woocommerce_cart_item_thumbnail', function( $image, $cart_item, $cart_item_key ){
+    $product = $cart_item['data'];
+    return $product->get_image( 'cart_image_size' );
+}, 3, 100 );
