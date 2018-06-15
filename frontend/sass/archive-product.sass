@@ -1,47 +1,38 @@
-.ordering
-  padding-bottom: 10px
-  .orderby
-    border-radius: 0
-    border-color: $light-grey
-    background: none
-    padding: 10px
+.archive-product_container
+  .ordering
+    padding-bottom: 10px
+    .orderby
+      border-radius: 0
+      border-color: $light-grey
+      background: none
+      padding: 10px
 
-.product
-  border: 1px solid $light-grey
-  .onsale
-    position: absolute
-    top: 10px
-    left: 30px
-  .price
-    display: block
-    padding: 10px 20px 10px
-    font-weight: bold
+  .product
+    border: 1px solid $light-grey
+    .onsale
+      position: absolute
+      top: 10px
+      left: 30px
+    .price
+      display: block
+      padding: 10px 20px 10px
+      font-weight: bold
+      color: $dark-blue
+
+
+  .attachment-woocommerce_thumbnail
+    border-bottom: 1px solid $light-grey
+
+  .woocommerce-loop-product__title
+    font-size: 15px
     color: $dark-blue
+    text-transform: uppercase
+    font-weight: bold
+    line-height: 1.4
+    margin: 20px 20px 0
 
+  .product-wrapper-desc
+    min-height: 125px
 
-.attachment-woocommerce_thumbnail
-  border-bottom: 1px solid $light-grey
-
-.woocommerce-loop-product__title
-  font-size: 15px
-  color: $dark-blue
-  text-transform: uppercase
-  font-weight: bold
-  line-height: 1.4
-  margin: 20px 20px 0
-
-.product-wrapper-desc
-  min-height: 125px
-
-.button.product_type_simple.add_to_cart_button.ajax_add_to_cart
-  height: 100%
-  width: 100%
-  background: $blue
-  color: $white
-  text-align: center
-  &:hover
-    text-decoration: none
-  span
-    font-size: 25px
-    font-family: 'Open Sans', Helvetica, Arial, sans-servif
-    font-weight: 300
+  .add_to_cart_button
+    @extend .plus-btn

@@ -39,16 +39,7 @@ h1
   padding: 40px
 
 .woocommerce #payment #place_order
-  display: inline-block
-  background: $blue
-  color: $white
-  font-size: 17px
-  font-weight: bold
-  text-decoration: none
-  padding: 15px 60px
-  border-radius: 5px
-  &:hover
-    background: lighten($blue, 10)
+  @extend .default-btn
 
 .wc_payment_methods
   .wc_payment_method

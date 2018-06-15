@@ -1,0 +1,51 @@
+.single-product-container
+  
+  .product
+
+    .onsale
+      position: absolute
+      top: 10px
+      left: 30px
+
+    h1.product_title.entry-title
+      font-size: 24px
+      font-weight: bold
+      margin-bottom: 0px
+    .price
+      color: black
+      font-weight: bold
+      ins
+        display: block
+
+
+      .woocommerce-Price-amount
+        font-size: 36px
+
+      .woocommerce-Price-currencySymbol
+        font-size: 18px
+
+    button.single_add_to_cart_button
+      //@extend .button
+      margin-bottom: 20px
+      text-transform: uppercase
+      
+  .flex-control-nav.flex-control-thumbs
+    margin-left: 0
+    padding-left: 0
+    margin-top: 20px
+    li
+      list-style: none
+      display: inline-block
+
+      img
+        box-sizing: content-box
+        position: relative
+        top: 0
+        display: inline-block
+        &.flex-active
+          border-bottom: 2px solid grey
+          margin-top: 2px
+
+
+    li + li
+      margin-left: 15px

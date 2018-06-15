@@ -42,3 +42,30 @@ p
 
 .bg-green
   background: $green
+
+// cart, checkout, single add-to-cart
+.default-btn
+  display: inline-block
+  background: $blue
+  color: $white
+  font-size: 17px
+  font-weight: bold
+  text-decoration: none
+  padding: 15px 60px
+  border-radius: 5px
+  &:hover
+    background: lighten($blue, 10)
+
+// top-sale, archive
+.plus-btn
+  height: 100%
+  width: 100%
+  background: $blue
+  color: $white
+  text-align: center
+  &:hover
+    text-decoration: none
+  span
+    font-size: 25px
+    font-family: 'Open Sans', Helvetica, Arial, sans-servif
+    font-weight: 300

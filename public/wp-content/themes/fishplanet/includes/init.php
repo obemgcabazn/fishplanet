@@ -15,6 +15,8 @@ if ( ! function_exists( 'fishplanet_setup' ) ){
     add_theme_support( 'woocommerce' );
     add_theme_support( 'html5', array( 'search-form' ) );
     add_theme_support('widgets');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-slider');
   }
 }
 add_action( 'after_setup_theme', 'fishplanet_setup' );

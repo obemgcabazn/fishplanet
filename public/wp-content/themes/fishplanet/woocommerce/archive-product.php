@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 
 <?php get_header( 'shop' ); ?>
 
-<div class="container">
+<div class="container archive-product_container">
   <div class="row">
     <div class="col-12 text-center my-5">
       <?php
@@ -47,115 +47,107 @@ defined( 'ABSPATH' ) || exit;
     </div>
   </div>
 
-<div class="row">
-  <div class="col-12">
-    <?php
-    /**
-     * Hook: woocommerce_archive_description.
-     *
-     * @hooked woocommerce_taxonomy_archive_description - 10
-     * @hooked woocommerce_product_archive_description - 10
-     */
-    do_action( 'woocommerce_archive_description' );
-    ?>
-  </div>
-</div>
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-3">
+      <?php 
+      /**
+       * Hook: woocommerce_sidebar.
+       *
+       * @hooked woocommerce_get_sidebar - 10
+       */
+      do_action( 'woocommerce_sidebar' ); 
+      ?>
+    </div>
 
-<div class="row">
-  <div class="d-none d-lg-block col-lg-3">
-    <?php 
-    /**
-     * Hook: woocommerce_sidebar.
-     *
-     * @hooked woocommerce_get_sidebar - 10
-     */
-    do_action( 'woocommerce_sidebar' ); 
-    ?>
-  </div>
+    <div class="col-12 col-lg-9">
+      <?php
+      if ( woocommerce_product_loop() ) { ?>
 
-  <div class="col-12 col-lg-9">
-    <?php
-    if ( woocommerce_product_loop() ) { ?>
-
-      <div class="row">
-        <div class="col-12">
-          <div class="ordering">
-            <?php
-            /**
-             * Hook: woocommerce_before_shop_loop.
-             *
-             * @hooked wc_print_notices - 10
-             * @hooked woocommerce_result_count - 20
-             * @hooked woocommerce_catalog_ordering - 30
-             */
-            remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-            do_action( 'woocommerce_before_shop_loop' ); ?>
+        <div class="row">
+          <div class="col-12">
+            <div class="ordering">
+              <?php
+              /**
+               * Hook: woocommerce_before_shop_loop.
+               *
+               * @hooked wc_print_notices - 10
+               * @hooked woocommerce_result_count - 20
+               * @hooked woocommerce_catalog_ordering - 30
+               */
+              remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+              do_action( 'woocommerce_before_shop_loop' ); ?>
+            </div>
           </div>
         </div>
-      </div>
 
+        <div class="row">
+        
+        <?php
+        
+        //woocommerce_product_loop_start();
+        
+        if ( wc_get_loop_prop( 'total' ) ) {
+          while ( have_posts() ) {
+            the_post();
+
+            /**
+             * Hook: woocommerce_shop_loop.
+             *
+             * @hooked WC_Structured_Data::generate_product_data() - 10
+             */
+            do_action( 'woocommerce_shop_loop' ); ?>
+
+              <?php wc_get_template_part( 'content', 'product' );
+
+
+          }
+        } ?>
+
+
+        <?php //woocommerce_product_loop_end();?>
+
+        </div>
+
+        <?php
+        /**
+         * Hook: woocommerce_after_shop_loop.
+         *
+         * @hooked woocommerce_pagination - 10
+         */
+        do_action( 'woocommerce_after_shop_loop' );
+      } else {
+        /**
+         * Hook: woocommerce_no_products_found.
+         *
+         * @hooked wc_no_products_found - 10
+         */
+        do_action( 'woocommerce_no_products_found' );
+      }
+
+      /**
+       * Hook: woocommerce_after_main_content.
+       *
+       * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+       */
+      remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+      do_action( 'woocommerce_after_main_content' );
+
+      ?>
       <div class="row">
-      
-      <?php
-      
-      //woocommerce_product_loop_start();
-      
-      if ( wc_get_loop_prop( 'total' ) ) {
-        while ( have_posts() ) {
-          the_post();
-
+        <div class="col-12">
+          <?php
           /**
-           * Hook: woocommerce_shop_loop.
+           * Hook: woocommerce_archive_description.
            *
-           * @hooked WC_Structured_Data::generate_product_data() - 10
+           * @hooked woocommerce_taxonomy_archive_description - 10
+           * @hooked woocommerce_product_archive_description - 10
            */
-          do_action( 'woocommerce_shop_loop' ); ?>
-
-            <?php wc_get_template_part( 'content', 'product' );
-
-
-        }
-      } ?>
-
-
-      <?php //woocommerce_product_loop_end();?>
-
+          do_action( 'woocommerce_archive_description' );
+          ?>
+        </div>
       </div>
-
-      <?php
-      /**
-       * Hook: woocommerce_after_shop_loop.
-       *
-       * @hooked woocommerce_pagination - 10
-       */
-      do_action( 'woocommerce_after_shop_loop' );
-    } else {
-      /**
-       * Hook: woocommerce_no_products_found.
-       *
-       * @hooked wc_no_products_found - 10
-       */
-      do_action( 'woocommerce_no_products_found' );
-    }
-
-    /**
-     * Hook: woocommerce_after_main_content.
-     *
-     * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-     */
-    remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-    do_action( 'woocommerce_after_main_content' );
-
-    ?>
+    </div>
   </div>
-</div>
-
-
-
-
 </div> <!-- container -->
 
 <?php get_footer( 'shop' );
-
-?>
-
