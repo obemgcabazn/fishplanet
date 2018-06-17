@@ -1,5 +1,5 @@
 <?php
-if (!is_admin()) show_admin_bar(false);
+//if (!is_admin()) show_admin_bar(false);
 
 require get_template_directory() . '/includes/init.php';
 require get_template_directory() . '/includes/woocommerce.php';

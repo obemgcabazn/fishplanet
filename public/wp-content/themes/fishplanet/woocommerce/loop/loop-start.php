@@ -20,4 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="products col-12 col-lg-6">
+<?php if ( is_archive() ) { ?>
+
+  <div class="products col-12 col-lg-6">
+
+<?php } ?>
+

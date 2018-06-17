@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-if (is_product_category()){
+if (is_product_category() || is_single()){
   $args['class'] .= ' d-flex align-items-center justify-content-center';
 }
 

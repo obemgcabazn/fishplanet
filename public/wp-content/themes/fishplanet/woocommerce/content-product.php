@@ -24,7 +24,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-lg-4 mb-3">
+
+<?php //echo is_single() ? '<div class="row">'; ?>
+<?php $col_width = is_single() ? 3 : 4 ?>
+
+
+<div class="col-lg-<?=$col_width?> mb-3">
 	<div <?php wc_product_class( ); ?>>
 		<?php
 		/**

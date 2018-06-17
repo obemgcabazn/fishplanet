@@ -41,3 +41,26 @@ if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
 function woocommerce_template_loop_product_title() {
   echo '<h5 class="woocommerce-loop-product__title">' . get_the_title() . '</h5>';
 }
+
+
+/**
+ * Remove product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    // unset( $tabs['description'] );        // Remove the description tab
+    unset( $tabs['reviews'] );      // Remove the reviews tab
+    unset( $tabs['additional_information'] );   // Remove the additional information tab
+
+    return $tabs;
+}
+
+add_filter( 'woocommerce_get_image_size_single', function( $size ) {
+  return array(
+  'width' => 635,
+  'height' => 400,
+  'crop' => 1,
+  );
+} );
